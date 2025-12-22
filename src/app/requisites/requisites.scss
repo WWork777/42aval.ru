@@ -1,150 +1,154 @@
-@import '/public/const.scss';
+@import "/public/const.scss";
 
-.heading{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        margin: 200px 15% 50px;
-        border-bottom: 1px solid #282936c0;
-        h1{
-            position: relative;
-            margin-bottom: 0px;
-            margin-left: 0px;
-            font-size: 64px;
-            font-weight: 300;
-        }
+.heading {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 200px 15% 50px;
+  border-bottom: 1px solid #282936c0;
+  h1 {
+    position: relative;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-size: 64px;
+    font-weight: 300;
+  }
 }
-.rekviziti-list{
-         display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        gap: 40px;
-        margin: 50px 15% 100px;
-        .rekviziti-item{
-            display: flex;
-            justify-content: space-between;
-            gap: 30%;
-            position: relative; 
-            padding-bottom: 5px;
-            p{
-                font-size: 18px;
-                text-align: end;
-            }
-            
-            p:first-child{
-                font-weight: 600;
-                text-align: start;
-            }
-        }
-        .rekviziti-item::after{
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #282936c0 50%, transparent);
-            transform-origin: center;
-        }
+.rekviziti-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 40px;
+  margin: 50px 15% 100px;
+  .rekviziti-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 30%;
+    position: relative;
+    padding-bottom: 5px;
+    p {
+      font-size: 18px;
+      text-align: end;
+    }
+
+    p:first-child {
+      font-weight: 600;
+      text-align: start;
+    }
+  }
+  .rekviziti-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      #282936c0 50%,
+      transparent
+    );
+    transform-origin: center;
+  }
 }
 
-@media (max-width: 1600px){
-    .heading{
-        margin: 200px 10% 50px;
-        h1{
-            font-size: 50px;
-        }
+@media (max-width: 1600px) {
+  .heading {
+    margin: 200px 10% 50px;
+    h1 {
+      font-size: 50px;
     }
-    .rekviziti-list{
-        margin: 50px 10% 50px 10%;
-      
-    }
-
+  }
+  .rekviziti-list {
+    margin: 50px 10% 50px 10%;
+  }
 }
-@media (max-width: 1300px){
-    .heading{
-        margin: 200px 5% 50px;
-        h1{
-            font-size: 50px;
-        }
+@media (max-width: 1300px) {
+  .heading {
+    margin: 200px 5% 50px;
+    h1 {
+      font-size: 50px;
     }
-    .rekviziti-list{
-        margin: 50px 5% 50px;
-      
-    }
-
+  }
+  .rekviziti-list {
+    margin: 50px 5% 50px;
+  }
 }
-@media (max-width: 1124px){
-    .heading{
-        margin: 140px 5% 50px;
-        h1{
-            font-size: 50px;
-        }
+@media (max-width: 1124px) {
+  .heading {
+    margin: 140px 5% 50px;
+    h1 {
+      font-size: 50px;
     }
-    .rekviziti-list{
-        margin: 50px 5% 50px;
-      
-    }
-
+  }
+  .rekviziti-list {
+    margin: 50px 5% 50px;
+  }
 }
 @media (max-width: 1050px) {
-    .heading{
-        margin-top: 100px;
-        h1{
-            font-size: 50px;
-        }
+  .heading {
+    margin-top: 100px;
+    h1 {
+      font-size: 50px;
     }
-    .rekviziti-list{
-        margin: 50px 5% 50px;
-      
+  }
+  .rekviziti-list {
+    margin: 50px 5% 50px;
+  }
+  .rekviziti-item {
+    gap: 10px !important;
+    p {
+      font-size: 12px !important;
     }
-    .rekviziti-item{
-        gap: 10px !important;
-        p{
-            font-size: 12px !important;
-        }
-    }
+  }
 }
 
 @media (max-width: 768px) {
-    .heading {
-        margin: 120px 5% 20px;
-        h1{
-            font-size: 40px;
-        }
+  .heading {
+    margin: 120px 5% 20px;
+    h1 {
+      font-size: 40px;
     }
-    .rekviziti-list{
-        gap: 0px !important;
-        margin: 30px 5% 50px 5%;
-        .rekviziti-item{
-            margin-top: 6px;
-            flex-direction: column;
-            gap: 3px !important;
-            p{
-                margin: 0;
-            }
-            p:first-child{
-                font-weight: 600;
-            }
-        }
-        .rekviziti-item::after{
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #282936c0 10%, #282936c0 90%, transparent);
-            transform-origin: center;
-        }
-        p:nth-child(1){
-            white-space: nowrap !important;
-            text-align: left !important;
-            font-size: 11px !important;
-        }
-        p:nth-child(2){
-            text-align: right !important;
-            font-size: 10px !important;
-        }
+  }
+  .rekviziti-list {
+    gap: 0px !important;
+    margin: 30px 5% 50px 5%;
+    .rekviziti-item {
+      margin-top: 6px;
+      flex-direction: column;
+      gap: 3px !important;
+      p {
+        margin: 0;
+      }
+      p:first-child {
+        font-weight: 600;
+      }
     }
+    .rekviziti-item::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        #282936c0 10%,
+        #282936c0 90%,
+        transparent
+      );
+      transform-origin: center;
+    }
+    p:nth-child(1) {
+      white-space: nowrap !important;
+      text-align: left !important;
+      font-size: 11px !important;
+    }
+    p:nth-child(2) {
+      text-align: right !important;
+      font-size: 10px !important;
+    }
+  }
 }

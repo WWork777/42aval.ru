@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vitejs/plugin-rsc": "^0.5.9",
     "bootstrap": "^5.3.3",
     "inputmask": "^5.0.9",
-    "next": "15.2.4",
+    "next": "^15.4.8",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react-dom": "^19.2.3",
+    "react-server-dom-parcel": "^19.2.3",
+    "react-server-dom-webpack": "^19.2.3",
     "sass": "^1.86.0",
     "swiper": "^11.2.6"
   },
