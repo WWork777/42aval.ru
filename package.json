@@ -12,11 +12,8 @@
     "@vitejs/plugin-rsc": "^0.5.9",
     "bootstrap": "^5.3.3",
     "inputmask": "^5.0.9",
-<<<<<<< HEAD
     "next": "^15.4.8",
-=======
-    "next": "^15.2.6",
->>>>>>> 3b1cc518907bddd6c9a40276d969a62f42df4a3e
+
     "react": "^19.0.0",
     "react-dom": "^19.2.3",
     "react-server-dom-parcel": "^19.2.3",
