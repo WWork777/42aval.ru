@@ -11,7 +11,7 @@ function Contacts() {
             <div className="right-body-contacts-content">
               <div>
                 <h4>телефон</h4>
-                <a href="tel:+8 (913) 304-52-33">
+                <a href="tel:+7 (913) 304-52-33">
                   <p>
                     <span className="color">
                       <svg
