@@ -9,7 +9,6 @@ export default function HeroForm() {
   // Состояние только для имени, телефон живет внутри маски
   const [formData, setFormData] = useState({ name: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     if (inputRef.current) {
@@ -65,7 +64,7 @@ export default function HeroForm() {
       );
 
       if (response.ok) {
-        setShowModal(true);
+        alert('Заявка отправлена! Мы получили вашу заявку и свяжемся с вами в ближайшее время');
         setFormData({ name: '' });
         if (inputRef.current) inputRef.current.value = ""; // Чистим неуправляемый инпут
       } else {
@@ -121,16 +120,6 @@ export default function HeroForm() {
           {isSubmitting ? "Отправка..." : "Отправить заявку"}
         </button>
       </form>
-
-      {showModal && (
-        <div className="modal-tg">
-          <div className="modal-tg-content">
-            <h2 className="modal-tg-title">Заявка отправлена!</h2>
-            <p className="modal-tg-text">Мы получили вашу заявку и свяжемся с вами в ближайшее время</p>
-            <button onClick={() => setShowModal(false)}>Закрыть</button>
-          </div>
-        </div>
-      )}
     </>
   );
 }
