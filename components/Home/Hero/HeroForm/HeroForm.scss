@@ -1,0 +1,188 @@
+@import "/public/const.scss"; // Используем ваши переменные $beige и т.д.
+
+.modal-tg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-tg-content {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  .modal-tg-title {
+    font-size: 36px !important;
+    color: black;
+    font-size: 1.5rem !important;
+    margin-bottom: 10px !important;
+  }
+  .modal-tg-text {
+    font-size: 16px !important;
+    color: black;
+    margin-bottom: 20px !important;
+  }
+  button {
+    padding: 10px 24px;
+    background-color: $beige;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  button:hover {
+    background-color: $beige;
+  }
+}
+
+.hero-form-container {
+  background: transparent; // Убираем серый фон
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // Прижимаем к левому краю
+  width: 100%;
+  padding: 20px 0; // Уменьшаем отступы
+  color: white;
+
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; // Прижимаем к левому краю
+    gap: 20px; // Уменьшаем гап
+    width: 100%;
+    max-width: 700px; // Уменьшаем максимальную ширину
+    margin-bottom: 15px; // Уменьшаем отступ
+
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      gap: 20px;
+      // padding: 0 20px;
+    }
+  }
+
+  .group {
+    position: relative;
+    flex: 1;
+
+    input {
+      font-size: 16px; // Уменьшаем размер шрифта
+      padding: 8px 8px 8px 5px; // Уменьшаем отступы
+      display: block;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      background: transparent; // Убираем серый фон
+      color: white;
+      border-radius: 0 !important;
+      transition: 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-bottom-color: $beige;
+      }
+    }
+
+    label {
+      color: rgba(255, 255, 255, 0.7); // Чуть светлее
+      font-size: 16px; // Уменьшаем размер шрифта
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 0.2s ease all;
+    }
+
+    /* Анимация лейбла при фокусе или наличии текста */
+    input:focus ~ label,
+    input:not(:placeholder-shown) ~ label {
+      top: -12px !important; // Поднимаем меньше
+      font-size: 12px; // Уменьшаем размер шрифта
+      color: $beige;
+    }
+
+    /* Линия при фокусе (Bar) */
+    .bar {
+      position: relative;
+      display: block;
+      width: 100%;
+      &:before, &:after {
+        content: "";
+        height: 2px;
+        width: 0;
+        bottom: 0;
+        position: absolute;
+        background: $beige;
+        transition: 0.3s ease all;
+      }
+      &:before { left: 50%; }
+      &:after { right: 50%; }
+    }
+
+    input:focus ~ .bar:before,
+    input:focus ~ .bar:after {
+      width: 50%;
+    }
+  }
+
+  /* Поле сообщения во всю ширину */
+  .full-width-group {
+    width: 100%; // Оставляем 100%
+    max-width: 700px; // Уменьшаем максимальную ширину
+    margin-bottom: 15px; // Уменьшаем отступ
+    @media (max-width: 768px) { padding: 0 20px; }
+  }
+
+  /* Чекбокс согласия */
+  .conf-wrapper {
+    display: flex;
+    align-items: flex-start; // Выравниваем по верху
+    gap: 10px;
+    margin-bottom: 15px; // Уменьшаем отступ
+    font-size: 12px; // Уменьшаем размер шрифта
+    color: rgba(255, 255, 255, 0.8);
+    
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: $beige;
+      cursor: pointer;
+    }
+
+    a {
+      color: $beige;
+      text-decoration: underline;
+    }
+  }
+
+  /* Кнопка как на фото */
+  .btn-submit {
+    background-color: #a3816a; // Прямой цвет с фото или $dark-beige
+    color: white;
+    border: 1px solid #a3816a; // Добавляем рамку для стиля
+    padding: 10px 30px; // Уменьшаем отступы
+    border-radius: 8px; // Уменьшаем радиус
+    font-size: 16px; // Уменьшаем размер шрифта
+    cursor: pointer;
+    transition: 0.3s ease;
+    
+    &:hover:not(:disabled) {
+      background-color: darken(#a3816a, 10%);
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

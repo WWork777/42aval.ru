@@ -77,7 +77,7 @@ function Rekviziti() {
             value="Астапенко Елена Анатольевна"
           />
         </div>
-        {/* <Form /> */}
+        <Form />
       </div>
     </>
   );

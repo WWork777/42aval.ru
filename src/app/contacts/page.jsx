@@ -33,7 +33,7 @@ export default function MainBlog() {
       <Header />
       <Contacts />
       <YMap />
-      {/* <Form /> */}
+      <Form />
     </>
   );
 }

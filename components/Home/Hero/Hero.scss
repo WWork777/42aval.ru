@@ -46,6 +46,17 @@
   }
 }
 
+@keyframes formAppearance {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes button1 {
   0% {
     opacity: 0;
@@ -90,6 +101,11 @@
     -o-transform: translateX(0);
   }
 }
+.hero-form-container{
+  animation: formAppearance 1s ease forwards;
+  animation-delay: 1.2s; // Запускается после того, как подслоган начнет проявляться
+  opacity: 0; // Начальное состояние до запуска анимации
+}
 
 .hero {
   position: relative;
@@ -108,6 +124,7 @@
     padding: 0 15%;
     display: flex;
     flex-direction: column;
+    padding-top: 100px;
     justify-content: center;
     width: 100%;
     height: 100vh;

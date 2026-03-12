@@ -59,7 +59,7 @@ export default function Home() {
       <Advantages />
       <Steps />
       <Blog />
-      {/* <Form /> */}
+      <Form />
     </>
   );
 }

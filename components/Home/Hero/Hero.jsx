@@ -2,6 +2,7 @@ import Image from "next/image";
 import "./Hero.scss";
 import HeroHeader from "./HeroHeader";
 import DopHeader from "../../DopHeader/DopHeader";
+import HeroForm from "./HeroForm/HeroForm";
 import Link from "next/link";
 
 export default function Hero() {
@@ -27,11 +28,15 @@ export default function Hero() {
               Доверьте бухгалтерию экспертам и&nbsp;сосредоточьтесь
               на&nbsp;том,&nbsp;что&nbsp;действительно важно
             </span>
+            <div className="hero-form-container">
+              <HeroForm/>
+            </div>
+            
           </div>
-          <div className="hero-buttons">
-            {/* <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Связаться с нами</button> */}
+          {/* <div className="hero-buttons">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Связаться с нами</button>
             <Link href={"/services"}>Подробнее об услугах</Link>
-          </div>
+          </div> */}
           <Image
             src={"/Home/Hero/businesswoman.svg"}
             width={616}

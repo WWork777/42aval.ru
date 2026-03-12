@@ -261,7 +261,7 @@ const Portfolio = async ({ params }) => {
         </div>
         <Service />
       </div>
-      {/* <Form /> */}
+      <Form />
     </>
   );
 };

@@ -44,7 +44,7 @@ export default function ServicesPage() {
       <div className="container">
         <Services topic={"Регистрация бизнеса"} />
       </div>
-      {/* <Form /> */}
+      <Form />
     </>
   );
 }
