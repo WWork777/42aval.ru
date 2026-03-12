@@ -1,5 +1,6 @@
 'use client'
 import Image from "next/image";
+import Link from "next/link";
 import './Form.scss'
 import Inputmask from 'inputmask';
 import { useEffect, useRef, useState } from 'react';
@@ -105,7 +106,8 @@ export default function Form() {
                             <span className="bar"></span>
                             <label>Телефон</label>
                         </div>
-            <span className="conf">Нажимая на кнопку “отправить заявку”, я соглашаюсь с условиями <a href="#"   type="button" data-bs-toggle="modal" data-bs-target="#сonfidentiality">политики конфиденциальности</a></span>
+            {/* <span className="conf">Нажимая на кнопку “отправить заявку”, я соглашаюсь с условиями <a href="#"   type="button" data-bs-toggle="modal" data-bs-target="#сonfidentiality">политики конфиденциальности</a></span> */}
+            <span className="conf">Нажимая на кнопку “отправить заявку”, я соглашаюсь с условиями <Link target="_blank" href="/docs/Политика обработки ПД.pdf">политикой конфиденциальности</Link></span>
             <button type="submit" className="link-more" href='#' disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
