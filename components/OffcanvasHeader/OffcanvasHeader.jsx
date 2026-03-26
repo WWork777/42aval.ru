@@ -102,7 +102,7 @@ export default function OffcanvasHeader() {
               </div>
               <div className="contacts-container">
                 <div className="tel">
-                  <a href="tel:+79133045233">+79133045233</a>
+                  <a href="tel:+7 (962) 734-74-74">+7 (962) 734-74-74</a>
                 </div>
               </div>
               <a href="mailto:55199986499@mail.ru">55199986499@mail.ru</a>

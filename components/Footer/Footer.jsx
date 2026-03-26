@@ -67,7 +67,7 @@ export default function Footer() {
               </a>
             </div>
             <a className="adress" href="https://yandex.ru/maps/-/CHVgf-ku">
-              г. Кемерово, Сити Плаза Терешковой, 41.<br></br>303 офис, 3 этаж
+              г. Кемерово, ул. Терешковой, 41б<br></br>оф 302 , 303
             </a>
             <p className="adress">Пн - пт 09:00 - 18:00</p>
 
