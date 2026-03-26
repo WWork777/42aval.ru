@@ -31,7 +31,7 @@ export default function Footer() {
             />
           </div>
           <div className="footer-contacts">
-            <a href="tel:+7 (913) 304-52-33">+7 (913) 304-52-33</a>
+            <a href="tel:+7 (962) 734-74-74">+7 (962) 734-74-74</a>
             <a href="mailto:55199986499@mail.ru">55199986499@mail.ru</a>
             <div className="links">
               <a
