@@ -79,6 +79,7 @@ export default function DopHeader() {
         </Link>
         <div className="menu">
           <Link href="/">Главная</Link>
+          <Link href="/prices">Цены</Link>
           <Link href="/services">Услуги</Link>
           <Link href="/blog">Блог</Link>
           <Link href="/requisites">Реквизиты</Link>
