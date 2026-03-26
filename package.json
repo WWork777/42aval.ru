@@ -13,7 +13,6 @@
     "bootstrap": "^5.3.3",
     "inputmask": "^5.0.9",
     "next": "^15.4.8",
-
     "react": "^19.0.0",
     "react-dom": "^19.2.3",
     "react-server-dom-parcel": "^19.2.3",
@@ -23,6 +22,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/node": "25.5.0",
+    "@types/react": "19.2.14",
     "eslint": "^9",
     "eslint-config-next": "15.2.4"
   }

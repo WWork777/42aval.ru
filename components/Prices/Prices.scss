@@ -1,0 +1,144 @@
+@import "/public/const.scss";
+
+@keyframes serv2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.prices {
+  padding: 100px 15% !important;
+  padding: 0 0 100px;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 64px;
+    font-weight: 300;
+    margin-top: 80px;
+    animation: serv2 1s ease;
+  }
+
+  /* --- Новые стили для прайс-листа --- */
+  .page {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    
+    .price-section {
+      h2 {
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .price-table {
+        width: 100%;
+        border-collapse: collapse;
+
+        tr {
+          transition: background-color 0.3s ease;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.02); /* Легкая подсветка строки при наведении */
+          }
+        }
+
+        td {
+          padding: 20px 10px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+          font-size: 18px;
+          line-height: 140%;
+          vertical-align: middle;
+
+          &:first-child {
+            width: 70%;
+            font-weight: 400;
+            color: #222;
+          }
+
+          &:last-child {
+            width: 30%;
+            text-align: right;
+            font-weight: 500;
+            /* Если хотите выделить цену фирменным цветом, раскомментируйте строку ниже: */
+            /* color: $dark-beige; */
+          }
+        }
+
+        tr:last-child td {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  .prices {
+    padding: 100px 5% !important;
+  }
+}
+
+/* Адаптив для планшетов и мобильных телефонов */
+@media (max-width: 992px) {
+  .prices {
+    padding: 40px 3% 100px !important;
+
+    h3 {
+      font-size: 42px;
+      margin-top: 80px;
+    //   text-align: center;
+    }
+
+    .page {
+      gap: 40px;
+      margin-top: 30px;
+
+      .price-section {
+        h2 {
+          font-size: 22px;
+        }
+
+        .price-table {
+          tr {
+            display: flex;
+            flex-direction: column;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+
+          td {
+            width: 100% !important;
+            padding: 5px 10px;
+            text-align: left !important;
+            border-bottom: none;
+
+            &:first-child {
+              font-size: 16px;
+              color: rgba(0, 0, 0, 0.8);
+            }
+
+            &:last-child {
+              font-size: 18px;
+              font-weight: 600;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

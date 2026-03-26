@@ -45,6 +45,13 @@ export default function OffcanvasHeader() {
             </Link>
             <Link
               className="link-close"
+              href="/prices"
+              onClick={(e) => handleLinkClick(e, "#")}
+            >
+              Цены
+            </Link>
+            <Link
+              className="link-close"
               href="/services"
               onClick={(e) => handleLinkClick(e, "#")}
             >
