@@ -47,11 +47,6 @@ export default function FloatingSocialButton() {
 
   return (
     <>
-      {/* Кнопка вызова эвакуатора слева снизу */}
-      <a href="tel:+79234807070" className={module.tow_truck_button}>
-        {/* <img src="/svg/evakuator.png" alt="" /> */}
-        <span className={module.tow_truck_text}>Вызвать эвакуатор</span>
-      </a>
 
       {/* Основной контейнер с социальными кнопками справа */}
       <div className={module.floating_social_container} ref={containerRef}>
