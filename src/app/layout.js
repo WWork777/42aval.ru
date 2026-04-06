@@ -8,6 +8,7 @@ import Confidentiality from "../../components/Confidentiality/confidentiality";
 import YandexMetrika from "../../components/YandexMetrika/YandexMEtrika";
 import "../../components/Header/Header.scss";
 import "./services/MainPort.scss";
+import FloatingSocialButton from "../../components/FloatingSocialButton/FloatingSocialButton";
 
 export const metadata = {
   icons: {
@@ -80,6 +81,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <YandexMetrika />
+        <FloatingSocialButton />
       </body>
     </html>
   );
