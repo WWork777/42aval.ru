@@ -112,7 +112,7 @@ export default function HeroForm() {
         <div className="conf-wrapper">
           <input type="checkbox" id="hero-conf" required />
           <label htmlFor="hero-conf" style={{ position: 'static', pointerEvents: 'auto' }}>
-            Я согласен с <Link target="_blank" href="/docs/Политика обработки ПД.pdf">политикой данных</Link>
+            Согласен с <Link target="_blank" href="/docs/Политика обработки ПД.pdf">политикой обработки персональных данных</Link>
           </label>
         </div>
 
