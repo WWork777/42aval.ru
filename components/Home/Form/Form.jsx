@@ -107,7 +107,7 @@ export default function Form() {
                             <label>Телефон</label>
                         </div>
             {/* <span className="conf">Нажимая на кнопку “отправить заявку”, я соглашаюсь с условиями <a href="#"   type="button" data-bs-toggle="modal" data-bs-target="#сonfidentiality">политики конфиденциальности</a></span> */}
-            <span className="conf">Нажимая на кнопку “отправить заявку”, я соглашаюсь с условиями <Link target="_blank" href="/docs/Политика обработки ПД.pdf">политикой конфиденциальности</Link></span>
+            <span className="conf">Нажимая на кнопку “отправить заявку”, я соглашаюсь с условиями <Link target="_blank" href="/docs/Политика обработки ПД.pdf">политики конфиденциальности</Link></span>
             <button type="submit" className="link-more" href='#' disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
