@@ -56,19 +56,17 @@ function Rekviziti() {
         <div className="rekviziti-list">
           <RekvizitiItem
             name="Полное наименование:"
-            value='ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "АВАЛЬ"'
+            value="Индивидуальный предприниматель Астапенко Елена Анатольевна"
           />
-          <RekvizitiItem name="Сокращенное наименование:" value='ООО "Аваль"' />
-          <RekvizitiItem name="ИНН:" value="54205272556" />
-          <RekvizitiItem name="КПП:" value="420501001" />
-          <RekvizitiItem name="ОГРН:" value="1134205020014" />
+          <RekvizitiItem name="ИНН:" value="540231511717" />
+          <RekvizitiItem name="ОГРНИП:" value="320420500037789" />
           <RekvizitiItem
             name="Юридический адрес:"
-            value="650036, Кемеровская область, г Кемерово, Терешковой ул, д. 41, офис 302"
+            value="650036, Кемеровская область, г Кемерово, Терешковой ул, д. 41б, офис 302"
           />
           <RekvizitiItem
             name="Фактический адрес:"
-            value="Кемеровская область, г Кемерово, Терешковой ул, д. 41, офис 302"
+            value="Кемеровская область, г Кемерово, Терешковой ул, д. 41б, офис 302"
           />
           <RekvizitiItem name="Телефон:" value="+7 (3842) 44-74-74" />
           <RekvizitiItem name="Эл. почта:" value="55199986499@mail.ru" />
