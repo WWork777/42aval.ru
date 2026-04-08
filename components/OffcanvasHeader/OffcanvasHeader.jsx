@@ -5,6 +5,22 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function OffcanvasHeader() {
+  const router = useRouter();
+
+  // Вспомогательная функция для отправки целей
+  const reachGoal = (goalName) => {
+    if (typeof window !== "undefined" && typeof window.ym !== "undefined") {
+      window.ym(92696090, "reachGoal", goalName);
+    }
+  };
+
+  // Обработчик клика по ссылкам меню (если он определен в родительском компоненте,
+  // убедитесь, что передаете его через props, либо определите здесь)
+  const handleLinkClick = (e, href) => {
+    // Если вам нужно закрывать меню программно, добавьте логику здесь
+    // router.push(href);
+  };
+
   return (
     <>
       <div
@@ -36,6 +52,8 @@ export default function OffcanvasHeader() {
                 />
               </div>
             </div>
+
+            {/* Ссылки навигации */}
             <Link
               className="link-close"
               href="/"
@@ -46,43 +64,45 @@ export default function OffcanvasHeader() {
             <Link
               className="link-close"
               href="/prices"
-              onClick={(e) => handleLinkClick(e, "#")}
+              onClick={(e) => handleLinkClick(e, "/prices")}
             >
               Цены
             </Link>
             <Link
               className="link-close"
               href="/services"
-              onClick={(e) => handleLinkClick(e, "#")}
+              onClick={(e) => handleLinkClick(e, "/services")}
             >
               Услуги
             </Link>
             <Link
               className="link-close"
               href="/blog"
-              onClick={(e) => handleLinkClick(e, "#")}
+              onClick={(e) => handleLinkClick(e, "/blog")}
             >
               Блог
             </Link>
             <Link
               className="link-close"
               href="/requisites"
-              onClick={(e) => handleLinkClick(e, "#")}
+              onClick={(e) => handleLinkClick(e, "/requisites")}
             >
               Реквизиты
             </Link>
             <Link
               className="link-close"
               href="/contacts"
-              onClick={(e) => handleLinkClick(e, "#")}
+              onClick={(e) => handleLinkClick(e, "/contacts")}
             >
               Контакты
             </Link>
+
             <div className="footer-contacts">
               <div className="links">
                 <a
                   href="https://max.ru/u/f9LHodD0cOKf3w-EcnAMZGQEmLKfVuMxL2SsR6OO9GCeU9VMgJrzRx9J8Ow"
                   className="icon"
+                  onClick={() => reachGoal("MAX")} // Цель: MAX
                 >
                   <svg
                     version="1.0"
@@ -112,12 +132,24 @@ export default function OffcanvasHeader() {
                   </svg>
                 </a>
               </div>
+
               <div className="contacts-container">
                 <div className="tel">
-                  <a href="tel:+7 (962) 734-74-74">+7 (962) 734-74-74</a>
+                  <a
+                    href="tel:+79627347474"
+                    onClick={() => reachGoal("phone")} // Цель: phone
+                  >
+                    +7 (962) 734-74-74
+                  </a>
                 </div>
               </div>
-              <a href="mailto:55199986499@mail.ru">55199986499@mail.ru</a>
+
+              <a
+                href="mailto:55199986499@mail.ru"
+                onClick={() => reachGoal("email")} // Цель: email
+              >
+                55199986499@mail.ru
+              </a>
             </div>
           </div>
         </div>

@@ -5,6 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
+  // Вспомогательная функция для отправки целей
+  const reachGoal = (goalName) => {
+    if (typeof window !== "undefined" && typeof window.ym !== "undefined") {
+      window.ym(92696090, "reachGoal", goalName);
+    }
+  };
+
   return (
     <>
       <footer>
@@ -31,12 +38,24 @@ export default function Footer() {
             />
           </div>
           <div className="footer-contacts">
-            <a href="tel:+7 (962) 734-74-74">+7 (962) 734-74-74</a>
-            <a href="mailto:55199986499@mail.ru">55199986499@mail.ru</a>
+            {/* Цель на телефон */}
+            <a href="tel:+79627347474" onClick={() => reachGoal("phone")}>
+              +7 (962) 734-74-74
+            </a>
+
+            {/* Цель на почту */}
+            <a
+              href="mailto:55199986499@mail.ru"
+              onClick={() => reachGoal("email")}
+            >
+              55199986499@mail.ru
+            </a>
+
             <div className="links">
               <a
                 href="https://max.ru/u/f9LHodD0cOKf3w-EcnAMZGQEmLKfVuMxL2SsR6OO9GCeU9VMgJrzRx9J8Ow"
                 className="icon"
+                onClick={() => reachGoal("MAX")} // Цель на MAX
               >
                 <svg
                   version="1.0"
@@ -66,30 +85,32 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <a className="adress" href="https://yandex.ru/maps/-/CHVgf-ku">
+
+            <a
+              className="adress"
+              href="https://yandex.ru/maps/-/CHVgf-ku"
+              target="_blank"
+            >
               г. Кемерово, ул. Терешковой, 41б<br></br>оф 302 , 303
             </a>
             <p className="adress">Пн - пт 09:00 - 18:00</p>
 
-            {/* Добавленные ссылки на документы */}
             <div className="footer-docs">
               <Link
                 href="/docs/Политика обработки ПД.pdf"
-                target="_blanc"
+                target="_blank"
                 className="doc-link"
               >
                 Политика конфиденциальности
               </Link>
               <Link
                 href="/docs/Согласие.pdf"
-                target="_blanc"
+                target="_blank"
                 className="doc-link"
               >
                 Согласие на обработку персональных данных
               </Link>
             </div>
-
-            {/* <button className="link-more"  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Обратный звонок</button> */}
           </div>
         </div>
       </footer>
