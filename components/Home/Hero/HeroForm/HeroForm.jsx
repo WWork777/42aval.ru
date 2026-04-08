@@ -1,25 +1,25 @@
-'use client'
+"use client";
 import Link from "next/link";
-import './HeroForm.scss'
-import Inputmask from 'inputmask';
-import { useEffect, useRef, useState } from 'react';
+import "./HeroForm.scss";
+import Inputmask from "inputmask";
+import { useEffect, useRef, useState } from "react";
 
 export default function HeroForm() {
   const inputRef = useRef(null);
   // Состояние только для имени, телефон живет внутри маски
-  const [formData, setFormData] = useState({ name: '' });
+  const [formData, setFormData] = useState({ name: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (inputRef.current) {
-      const im = new Inputmask({ 
-        mask: "+7 (999) 999-99-99", 
+      const im = new Inputmask({
+        mask: "+7 (999) 999-99-99",
         showMaskOnHover: false,
         autoUnmask: true, // Позволяет получать чистые цифры через .value
-        clearMaskOnLostFocus: true
+        clearMaskOnLostFocus: true,
       });
       im.mask(inputRef.current);
-      
+
       return () => {
         if (inputRef.current?.inputmask) inputRef.current.inputmask.remove();
       };
@@ -33,14 +33,11 @@ export default function HeroForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Получаем данные напрямую из DOM-узлов для надежности
     const maskInstance = inputRef.current?.inputmask;
-    const rawPhone = maskInstance ? maskInstance.unmaskedvalue() : ""; 
-    const formattedPhone = inputRef.current?.value || "";
+    const rawPhone = maskInstance ? maskInstance.unmaskedvalue() : "";
 
-    // Валидация: unmaskedvalue для +7 (999) возвращает 10 цифр (без +7)
     if (!rawPhone || rawPhone.length !== 10) {
-      alert('Введите корректный номер телефона (10 цифр после +7)');
+      alert("Введите корректный номер телефона (10 цифр после +7)");
       return;
     }
 
@@ -48,7 +45,8 @@ export default function HeroForm() {
 
     const Phone = "79627347474";
     const idInstance = "3100517801";
-    const apiTokenInstance = "4e23b210658549c881680633b93bb11301a0f304a927433da6";
+    const apiTokenInstance =
+      "4e23b210658549c881680633b93bb11301a0f304a927433da6";
 
     try {
       const response = await fetch(
@@ -58,21 +56,29 @@ export default function HeroForm() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             chatId: `${Phone}@c.us`,
-            message: `Новая заявка с сайта:\nИмя: ${formData.name}\nТелефон: +7${rawPhone}`
+            message: `Новая заявка с сайта:\nИмя: ${formData.name}\nТелефон: +7${rawPhone}`,
           }),
         },
       );
 
       if (response.ok) {
-        alert('Заявка отправлена! Мы получили вашу заявку и свяжемся с вами в ближайшее время');
-        setFormData({ name: '' });
-        if (inputRef.current) inputRef.current.value = ""; // Чистим неуправляемый инпут
+        // --- ДОБАВЛЕНО: Отправка цели в Яндекс.Метрику ---
+        if (typeof window !== "undefined" && typeof window.ym !== "undefined") {
+          window.ym(92696090, "reachGoal", "hero");
+        }
+        // ------------------------------------------------
+
+        alert(
+          "Заявка отправлена! Мы получили вашу заявку и свяжемся с вами в ближайшее время",
+        );
+        setFormData({ name: "" });
+        if (inputRef.current) inputRef.current.value = "";
       } else {
-        alert('Ошибка при отправке. Попробуйте снова.');
+        alert("Ошибка при отправке. Попробуйте снова.");
       }
     } catch (error) {
       console.error(error);
-      alert('Ошибка при отправке. Проверьте соединение.');
+      alert("Ошибка при отправке. Проверьте соединение.");
     } finally {
       setIsSubmitting(false);
     }
@@ -86,7 +92,7 @@ export default function HeroForm() {
             <input
               type="text"
               name="name"
-              placeholder=" " 
+              placeholder=" "
               value={formData.name}
               onChange={handleChange}
               required
@@ -111,8 +117,14 @@ export default function HeroForm() {
 
         <div className="conf-wrapper">
           <input type="checkbox" id="hero-conf" required />
-          <label htmlFor="hero-conf" style={{ position: 'static', pointerEvents: 'auto' }}>
-            Согласен с <Link target="_blank" href="/docs/Политика обработки ПД.pdf">политикой обработки персональных данных</Link>
+          <label
+            htmlFor="hero-conf"
+            style={{ position: "static", pointerEvents: "auto" }}
+          >
+            Согласен с{" "}
+            <Link target="_blank" href="/docs/Политика обработки ПД.pdf">
+              политикой обработки персональных данных
+            </Link>
           </label>
         </div>
 
