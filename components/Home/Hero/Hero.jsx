@@ -21,17 +21,16 @@ export default function Hero() {
         <div className="hero-content">
           <div className="slogan">
             <p>
-              Мы считаем<br></br>
-              Вы зарабатываете
+              Устал платить штрафы<br></br>И огромные налоги <br></br> Тебе к
+              нам!
             </p>
             <span>
               Доверьте бухгалтерию экспертам и&nbsp;сосредоточьтесь
               на&nbsp;том,&nbsp;что&nbsp;действительно важно
             </span>
             <div className="hero-form-container">
-              <HeroForm/>
+              <HeroForm />
             </div>
-            
           </div>
           {/* <div className="hero-buttons">
             <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Связаться с нами</button>

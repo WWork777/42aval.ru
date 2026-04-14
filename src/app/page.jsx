@@ -6,7 +6,7 @@ import Advantages from "../../components/Home/Advantages/Advantages";
 import Steps from "../../components/Home/Steps/Steps";
 import Form from "../../components/Home/Form/Form";
 import Blog from "../../components/Home/Blog/Blog";
-import Calculate from "../../components/Home/Calculate/Calculate"
+import Calculate from "../../components/Home/Calculate/Calculate";
 
 export const metadata = {
   title: "Бухгалтерский аутсорсинг и регистрация бизнеса в Кемерово | АВАЛЬ",
@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Calculate />
+      {/* <Calculate /> */}
       <About />
       <Services />
       <Advantages />
