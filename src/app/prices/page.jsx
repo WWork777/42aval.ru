@@ -2,8 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Header from "../../../components/Header/Header";
 import PriceComponent from "../../../components/Prices/Prices";
-
-
+import TaxQuiz from "../../../components/Home/TaxQuiz/TaxQuiz";
 
 export const metadata = {
   title: "Бухгалтерский аутсорсинг и регистрация бизнеса в Кемерово | АВАЛЬ",
@@ -51,8 +50,9 @@ export const metadata = {
 export default function Prices() {
   return (
     <>
-    <Header />
-    <PriceComponent/>
+      <Header />
+      <PriceComponent />
+      <TaxQuiz />
     </>
   );
 }

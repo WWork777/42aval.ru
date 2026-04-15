@@ -5,6 +5,7 @@ import "./ArticlePage.scss";
 import Header from "../../../../components/Header/Header";
 import HeroHeader from "../../../../components/Home/Hero/HeroHeader";
 import DopHeader from "../../../../components/DopHeader/DopHeader";
+import TaxQuiz from "../../../../components/Home/TaxQuiz/TaxQuiz";
 
 // Функция для получения данных статьи
 async function getArticle(postSlug) {
@@ -93,6 +94,7 @@ const ArticlePage = async ({ params }) => {
           Назад в блог
         </Link>
       </div>
+      <TaxQuiz />
     </>
   );
 };

@@ -1,6 +1,7 @@
 // src/MainBlog.js
 import BlogComponent from "../../../components/Blog/Blog";
 import Header from "../../../components/Header/Header";
+import TaxQuiz from "../../../components/Home/TaxQuiz/TaxQuiz";
 import "./MainBlog.scss";
 
 export const metadata = {
@@ -32,6 +33,7 @@ export default function MainBlog() {
     <>
       <Header />
       <BlogComponent />
+      <TaxQuiz />
     </>
   );
 }

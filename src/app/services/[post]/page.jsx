@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "../../../../components/Header/Header";
 import Form from "../../../../components/Home/Form/Form";
 import Service from "../../../../components/Service/Service";
+import TaxQuiz from "../../../../components/Home/TaxQuiz/TaxQuiz";
 
 export async function generateMetadata({ params }) {
   const { post } = params;
@@ -261,6 +262,7 @@ const Portfolio = async ({ params }) => {
         </div>
         <Service />
       </div>
+      <TaxQuiz />
       <Form />
     </>
   );

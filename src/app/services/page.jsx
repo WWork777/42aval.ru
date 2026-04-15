@@ -1,5 +1,6 @@
 import Header from "../../../components/Header/Header";
 import Form from "../../../components/Home/Form/Form";
+import TaxQuiz from "../../../components/Home/TaxQuiz/TaxQuiz";
 import Services from "../../../components/Services/Services";
 
 export const metadata = {
@@ -44,6 +45,7 @@ export default function ServicesPage() {
       <div className="container">
         <Services topic={"Все"} />
       </div>
+      <TaxQuiz />
       <Form />
     </>
   );
