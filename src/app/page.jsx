@@ -7,6 +7,9 @@ import Steps from "../../components/Home/Steps/Steps";
 import Form from "../../components/Home/Form/Form";
 import Blog from "../../components/Home/Blog/Blog";
 import Calculate from "../../components/Home/Calculate/Calculate";
+import TaxQuiz from "../../components/Home/TaxQuiz/TaxQuiz";
+import BusinessSupport from "../../components/Home/BusinessSupport/BusinessSupport";
+import WelcomeModal from "../../components/WelcomeModal/WelcomeModal";
 
 export const metadata = {
   title: "Бухгалтерский аутсорсинг и регистрация бизнеса в Кемерово | АВАЛЬ",
@@ -55,10 +58,14 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <WelcomeModal />
       {/* <Calculate /> */}
-      <About />
       <Services />
+      <BusinessSupport />
+      <TaxQuiz />
       <Advantages />
+      <About />
+
       <Steps />
       <Blog />
       <Form />

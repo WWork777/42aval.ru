@@ -1,0 +1,236 @@
+@import "/public/const.scss";
+
+.supportContainer {
+  display: flex;
+  gap: 100px;
+  width: 100%;
+
+  .infoSide {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media (max-width: 992px) {
+      gap: 15px;
+    }
+    h2 {
+      text-transform: uppercase;
+      font-size: 42px;
+      font-weight: 400;
+
+      @media (max-width: 992px) {
+        font-size: 30px !important;
+      }
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+
+      @media (max-width: 992px) {
+        font-size: 16px !important;
+      }
+    }
+  }
+
+  .cardsSide {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+.supportCard {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 4px 4px 20px hsla(240, 12%, 72%, 0.4);
+  display: flex;
+  flex-direction: column;
+  span {
+    font-size: 32px;
+    color: $dark-beige;
+    font-weight: 500;
+    margin-bottom: 20px;
+
+    @media (max-width: 992px) {
+      font-size: 24px;
+    }
+  }
+  h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 400;
+    @media (max-width: 992px) {
+      font-size: 18px;
+    }
+  }
+  p {
+    font-size: 15px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    flex-grow: 1;
+
+    @media (max-width: 992px) {
+      font-size: 14px;
+    }
+  }
+  .line {
+    height: 1px;
+    background-color: $dark-beige;
+    margin-bottom: 25px;
+  }
+  .cardBtn {
+    background-color: #a3816a;
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: fit-content;
+    margin-top: 10px;
+
+    @media (max-width: 992px) {
+      font-size: 16px;
+      padding: 10px 22px;
+    }
+
+    &:hover {
+      background-color: darken(#a3816a, 10%);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(163, 129, 106, 0.2);
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .supportContainer {
+    flex-direction: column;
+    gap: 40px;
+    .infoSide,
+    .cardsSide {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .supportContainer .cardsSide {
+    grid-template-columns: 1fr;
+  }
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modalContent {
+  background: white;
+  padding: 50px;
+  border-radius: 25px;
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  @media (max-width: 992px) {
+    padding: 25px;
+  }
+
+  h3 {
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 400;
+
+    @media (max-width: 992px) {
+      font-size: 22px;
+    }
+  }
+
+  .serviceName {
+    color: $dark-beige;
+    font-weight: 500;
+    margin-bottom: 30px;
+    @media (max-width: 992px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #ccc;
+  &:hover {
+    color: #000;
+  }
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    font-size: 16px;
+    color: black;
+    background: #fdfdfd;
+    &:focus {
+      outline: none;
+      border-color: $dark-beige;
+    }
+  }
+
+  .submitBtn {
+    background: #a3816a;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background: darken(#a3816a, 10%);
+    }
+    &:disabled {
+      background: #ccc;
+    }
+  }
+
+  .privacy {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.4;
+    margin-top: 10px;
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+}

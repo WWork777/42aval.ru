@@ -1,0 +1,312 @@
+@import "/public/const.scss";
+
+.taxQuiz {
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+.quizCard {
+  background: white;
+  width: 100%;
+  max-width: 800px;
+  padding: 60px;
+  border-radius: 25px;
+  box-shadow:
+    -10px -10px 20px rgb(255, 255, 255),
+    4px 4px 20px hsla(240, 12%, 72%, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .num {
+    font-size: 36px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 450;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: black;
+    margin: 0;
+    line-height: 1.2;
+
+    @media (max-width: 399px) {
+      font-size: 20px;
+    }
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .optionBtn {
+      text-align: left;
+      padding: 20px 30px;
+      font-size: 18px;
+      border: 1px solid #eee;
+      background: transparent;
+      color: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+
+      &:hover {
+        border-color: $dark-beige;
+        background-color: rgba($dark-beige, 0.05);
+        transform: translateX(10px);
+      }
+
+      @media (max-width: 400px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .progressContainer {
+    height: 2px;
+    background: #eee;
+    width: 100%;
+    margin-top: 20px;
+    .progressBar {
+      height: 100%;
+      background: $dark-beige;
+      transition: 0.5s ease;
+    }
+  }
+}
+
+.introStep {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+
+  .badge {
+    background-color: rgba($dark-beige, 0.1);
+    color: $dark-beige;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    width: fit-content;
+    font-weight: 500;
+  }
+
+  .title {
+    span {
+      color: $dark-beige; // Выделяем главную ценность цветом
+    }
+  }
+
+  p {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.5;
+    max-width: 600px;
+  }
+
+  .bonusList {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li {
+      font-size: 16px;
+      font-weight: 450;
+    }
+  }
+
+  .startBtn {
+    background-color: #a3816a;
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: fit-content;
+    margin-top: 10px;
+
+    &:hover {
+      background-color: darken(#a3816a, 10%);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(163, 129, 106, 0.2);
+    }
+  }
+}
+
+// Убедись, что на мобилках кнопка старта растягивается
+@media (max-width: 992px) {
+  .introStep {
+    .startBtn {
+      width: 100%;
+    }
+    .title {
+      font-size: 26px;
+    }
+  }
+}
+
+.finalStep {
+  .finalDesc {
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .privacy {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 15px;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.quizForm {
+  input {
+    &:focus {
+      outline: none;
+      border-color: $dark-beige;
+    }
+  }
+}
+
+.quizForm {
+  display: flex;
+  gap: 15px;
+  input {
+    padding: 15px 25px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    flex: 1;
+    font-size: 16px;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .submitBtn {
+    background-color: #a3816a;
+    color: white;
+    border: 1px solid #a3816a;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: rgb(134.7800829876, 104.0248962656, 83.2199170124);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 400px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.quizHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  padding: 5px 0;
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: $dark-beige;
+    svg {
+      transform: translateX(-5px);
+    }
+  }
+}
+
+.finalStep {
+  .backBtn {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .quizCard {
+    padding: 30px 20px;
+    .title {
+      font-size: 24px;
+    }
+  }
+  .quizForm {
+    flex-direction: column;
+  }
+}
+.bonusList {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 25px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  li {
+    display: flex;
+    align-items: center; // Центрируем иконку по тексту
+    gap: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.8);
+
+    span {
+      line-height: 1.2;
+    }
+
+    svg {
+      flex-shrink: 0; // Чтобы иконка не сжималась при длинном тексте
+    }
+  }
+}
+@media (max-width: 400px) {
+  .introStep {
+    .title {
+      font-size: 20px;
+    }
+    p {
+      font-size: 16px;
+    }
+    .startBtn {
+      font-size: 14px;
+    }
+  }
+
+  .bonusList {
+    li {
+      span {
+        font-size: 13px;
+      }
+    }
+  }
+}
